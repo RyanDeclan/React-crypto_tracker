@@ -1,13 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { fetchCoins } from "../api";
 import { Helmet } from "react-helmet";
 import { useSetRecoilState } from "recoil";
 import { isDarkAtom } from "./atoms";
-import { fetchCoinInfo, fetchCoinTickers } from "../api";
-import { useLocation, useParams } from "react-router";
+
 import CoinDetail from "./CoinDetail";
 const Container = styled.div`
   padding: 0px 20px;
@@ -70,9 +68,7 @@ interface ICoin {
   type: string;
 }
 
-interface IcoinsProps {
-  toggleDark: () => void;
-}
+
 
 const Box = styled.div`
  display: flex;
@@ -160,7 +156,7 @@ function Coins() {
   const toggleDarkAtom = () => setDarkAtom((prev) => !prev);
   const { isLoading, data } = useQuery<ICoin[]>("allCoins", fetchCoins);
 
-  
+
   return (
     <Container>
       <Helmet>

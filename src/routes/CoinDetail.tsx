@@ -1,5 +1,4 @@
 import { useQuery } from "react-query";
-import { useLocation, useParams } from "react-router";
 import { exchangeRate, fetchCoinTickers } from "../api";
 import styled from "styled-components";
 
