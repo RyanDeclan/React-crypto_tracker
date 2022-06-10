@@ -230,12 +230,14 @@ function Coin() {
   const loading = infoLoading || tickersLoading;
   return (
     <Container>
+     
       <Helmet>
         <title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </title>
       </Helmet>
       <Header>
+        
         <Title>
           {state?.name ? state.name : loading ? "Loading..." : infoData?.name}
         </Title>
@@ -244,6 +246,7 @@ function Coin() {
         <Loader>Loading...</Loader>
       ) : (
         <>
+          <Link to={`/`} style={{color:"yellow"}}>◀︎ 뒤로가기</Link>
           <Overview>
             <OverviewItem>
               <span>Rank:</span>
