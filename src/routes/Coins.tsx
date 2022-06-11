@@ -177,7 +177,7 @@ function Coins() {
             <HeaderName>시가총액</HeaderName>
             <HeaderName>현재가</HeaderName>
           </BoxHeader>
-          {data?.slice(0, 13).map((coin) => (
+          {data?.slice(0, 10).map((coin) => (
             <Coin key={coin.id}>
             
               
