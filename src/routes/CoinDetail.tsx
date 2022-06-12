@@ -82,7 +82,7 @@ function CoinDetail(props:any){
       ["tickers", coinId],
       () => fetchCoinTickers(coinId),
       {
-        refetchInterval: 20000,
+        refetchInterval: 100000,
       }
  
     );

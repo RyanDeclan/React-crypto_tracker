@@ -22,9 +22,12 @@ interface IHistorical {
 function Chart({ coinId }: ChartProps) {
   const isDark = useRecoilValue(isDarkAtom);
   const { isLoading, data } = useQuery<IHistorical[]>(["ohlcv", coinId], () =>
-    fetchCoinHistory(coinId)
+    fetchCoinHistory(coinId),
+    {
+      refetchInterval: 1000000,
+    },
   );
-  console.log(data)
+
   return (
     <h1>
       {isLoading ? (
